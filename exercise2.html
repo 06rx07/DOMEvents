@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">    
+        <title>Exercise 2</title>
+        <style>
+            select {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>            
+        <label>
+            <input id="school" name="status" type="radio" onclick="toggleDisplay('school')">
+            School
+        </label>
+        <label>
+            <input id="company" name="status" type="radio" onclick="toggleDisplay('company')">
+            Company
+        </label>
+
+        <select id="school-select">        
+            <option>Universal Uni</option>
+            <option>London FC Uni</option>
+            <option>Eastern Uni</option>
+        </select>
+
+        <select id="company-select">        
+            <option>Baidu</option>
+            <option>iQiyi</option>        
+        </select>
+
+        <script>
+            function toggleDisplay(selected){
+                switch(selected){
+                    case 'school':
+                        schoolSelect.style.display = "inline";
+                        companySelect.style.display = "none";
+                        break;
+                    case 'company':
+                        schoolSelect.style.display = "none";
+                        companySelect.style.display = "inline";             
+                        break;
+                }
+            }
+            const schoolSelect = document.querySelector("select#school-select");
+            const companySelect = document.querySelector("select#company-select");
+        </script>
+    </body>
+</html>
