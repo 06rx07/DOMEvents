@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">    
+        <title>Exercise 1</title>
+    </head>
+    <body>
+        <input id="name" type="text">    
+        <button id="submit-btn">Submit</button>
+        <p id="input-result"></p>
+
+        <script>
+            function keyupInput(event){
+                switch(event.code) {
+                    case "Enter":
+                        showName(event);
+                        break;
+                    case "Escape":
+                        clearName(event);
+                        break;
+                }
+            }
+            function showName(event){
+                console.log(name.value);
+                inputResult.innerHTML = name.value;
+            }
+            function clearName(event){
+                name.value = "";
+            }
+            const submitBtn = document.querySelector("#submit-btn");
+            const name = document.querySelector("#name");
+            const inputResult = document.querySelector("#input-result");
+            submitBtn.addEventListener("click", showName);
+            name.addEventListener("keyup", keyupInput);
+        </script>
+    </body>
+</html>

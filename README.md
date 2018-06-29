@@ -1,2 +1,2 @@
 # DOMEvents
-DOM Events Exercise, IFE 2018 Day 20-21
+IFE2018 Course Project DOM Events Exercise - Day 20 to 21
