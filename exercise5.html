@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title>Exercise 5</title>
+        <style>
+            #erik-smile {
+                width: 480px;
+                height: 480px;
+                background-image: url("./erik_ce204002.jpg");
+                background-repeat: no-repeat;
+                background-position: 0px 0px;
+            }
+        </style>
+    </head>
+    <body onload="popNext()">
+        <div id="erik-smile"></div>
+
+        <script>
+            function getNextPositionY(current){
+                let nextY = parseInt(current.slice(0, -2) || 0) - 480;
+                if(nextY === -8160){
+                    nextY = 0;
+                }
+                return nextY + "px";
+            }
+
+            function popNext(){
+                setInterval(() => {
+                    const nextY = getNextPositionY(photo.style.backgroundPositionY);
+                    photo.style.backgroundPosition = "0px " + nextY;
+                }, 150);
+            }
+            const photo = document.querySelector("div#erik-smile");
+        </script>
+    </body>
+</html>
